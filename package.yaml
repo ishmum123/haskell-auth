@@ -24,6 +24,11 @@ dependencies:
 - servant-server
 - wai
 - warp
+- http-client
+- servant-client
+- postgresql-simple
+- resource-pool
+- bytestring
 
 library:
   source-dirs: src
@@ -39,6 +44,11 @@ executables:
     dependencies:
     - base
     - ecommerce
+    - text
+    - servant
+    - http-types
+    - markdown-unlit
+    - transformers
 
 tests:
   ecommerce-test:
