@@ -31,6 +31,12 @@ checkMigration conn = query_ conn [sql|
 createStructure :: Connection -> IO ()
 createStructure conn = do
   execute_ conn [sql|
+    DROP SCHEMA public CASCADE;
+    CREATE SCHEMA public;
+
+    GRANT ALL ON SCHEMA public TO postgres;
+    GRANT ALL ON SCHEMA public TO public;
+
     CREATE TABLE users (id int not null, name text not null, password text not null);
     INSERT INTO users VALUES (1, 'dev', 'dev');
     INSERT INTO users VALUES (2, 'test', 'test');

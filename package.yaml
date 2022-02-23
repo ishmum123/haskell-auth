@@ -29,6 +29,9 @@ dependencies:
 - postgresql-simple
 - resource-pool
 - bytestring
+- servant-auth
+- servant-auth-server
+- containers
 
 library:
   source-dirs: src
